@@ -24,7 +24,9 @@
       <a href="#work" data-hover data-spy="work">Work</a>
       <a href="#stack" data-hover data-spy="stack">Stack</a>
       <a href="#experience" data-hover data-spy="experience">Experience</a>
+      <a href="#writing" data-hover data-spy="writing">Writing</a>
       <a href="#credentials" data-hover data-spy="credentials">Credentials</a>
+      <a href="#recognition" data-hover data-spy="recognition">Awards</a>
       <a href="#contact" data-hover data-spy="contact">Contact</a>
     </nav>
     <div class="nav__actions">
@@ -316,13 +318,91 @@
 
     <div class="earlier reveal">
       <p class="kicker">Earlier work</p>
-      <div class="earlier__list">
-        <span data-hover><b>VTS</b> visitor &amp; tenant platform · GoLang / Node / GraphQL / gRPC</span>
-        <span data-hover><b>Inbillo</b> contract intelligence · LLM extraction · MetaMask</span>
-        <span data-hover><b>TapGoods</b> rental marketplace · Next.js / NestJS · AI search</span>
-        <span data-hover><b>NeuronX.ai</b> analytics · AWS Lambda · ML dashboards</span>
-        <span data-hover><b>BioMark</b> patient / doctor portal · AI triage</span>
-      </div>
+      <h3 class="earlier__title">The decade before the agents.</h3>
+      <p class="earlier__lede">Solution architecture and full-stack delivery across proptech, fintech, marketplaces, analytics and healthcare — where the AI showed up as a feature inside the product rather than as the product.</p>
+    </div>
+
+    <div class="past-grid">
+
+      <article class="past-card reveal" data-hover>
+        <div class="work-card__top">
+          <span class="work-card__index mono">09</span>
+          <span class="work-card__role">Solutions Architect · Full-Stack Lead</span>
+        </div>
+        <h3>VTS: Visitor &amp; Tenant Experience Platform</h3>
+        <p class="work-card__org">Commercial real estate · building access at scale</p>
+        <p class="work-card__desc">Streamlines building access and on-site experience for property managers and tenants across a large commercial portfolio.</p>
+        <ul class="work-card__points">
+          <li>Multi-day passes, additional-recipient notifications and streamlined visitor flows on event-driven microservices</li>
+          <li>TypeScript / React front end over GoLang and Node.js services, GraphQL and gRPC</li>
+          <li>Owned the AWS architecture via Terraform; added intelligent notification routing and anomaly detection across visitor and access patterns</li>
+        </ul>
+        <div class="tags"><span>TypeScript</span><span>React</span><span>GoLang</span><span>GraphQL</span><span>gRPC</span><span>AWS</span><span>Terraform</span></div>
+      </article>
+
+      <article class="past-card reveal" data-hover>
+        <div class="work-card__top">
+          <span class="work-card__index mono">10</span>
+          <span class="work-card__role">Full-Stack Lead · Architect</span>
+        </div>
+        <h3>Inbillo: Contract Intelligence Platform</h3>
+        <p class="work-card__org">Fintech · liquidity against contracts</p>
+        <p class="work-card__desc">Contract-management platform letting companies browse, search, store and transact against contracts, including third-party and cryptocurrency payments.</p>
+        <ul class="work-card__points">
+          <li>Architected listings, search and filtering, invoicing, checkout and admin bulk upload</li>
+          <li>LLM-based contract understanding, extraction and semantic search to cut manual review</li>
+          <li>MetaMask crypto payments plus third-party shipping / payment APIs; owned the React + Redux front end, CI/CD and Vercel deploys</li>
+        </ul>
+        <div class="tags"><span>React</span><span>Node</span><span>Redux</span><span>MetaMask</span><span>LLM extraction</span><span>Semantic search</span></div>
+      </article>
+
+      <article class="past-card reveal" data-hover>
+        <div class="work-card__top">
+          <span class="work-card__index mono">11</span>
+          <span class="work-card__role">Full-Stack Lead · Architect</span>
+        </div>
+        <h3>TapGoods: Rental Marketplace &amp; Inventory</h3>
+        <p class="work-card__org">Marketplace · catalog, operations, storefront</p>
+        <p class="work-card__desc">Inventory-management and marketplace software for rental businesses, spanning catalog, day-to-day operations and a customer-facing storefront.</p>
+        <ul class="work-card__points">
+          <li>Next.js / NestJS application with real-time collaboration over WebSockets</li>
+          <li>OAuth-secured services, GraphQL caching and query optimization on AWS (Cognito, S3, EC2)</li>
+          <li>AI-driven search and recommendations across the rental catalog to lift discovery and conversion</li>
+        </ul>
+        <div class="tags"><span>Next.js</span><span>NestJS</span><span>Socket.IO</span><span>GraphQL</span><span>AWS</span><span>Tailwind</span></div>
+      </article>
+
+      <article class="past-card reveal" data-hover>
+        <div class="work-card__top">
+          <span class="work-card__index mono">12</span>
+          <span class="work-card__role">Full-Stack Developer · Architect</span>
+        </div>
+        <h3>NeuronX.ai: Data Management &amp; Analytics</h3>
+        <p class="work-card__org">Enrollment, competitions and performance insight</p>
+        <p class="work-card__desc">Data-management and analytics platform that runs enrollment and competitions, then surfaces performance insight through dashboards.</p>
+        <ul class="work-card__points">
+          <li>Enrollment and competition-management interfaces with role-based admin permissions on AWS Lambda and Prisma</li>
+          <li>ML-driven performance-analytics dashboards</li>
+          <li>Remediated the majority of security vulnerabilities across portal and admin app; automated DB deployments via GitHub Actions and added Jest / RTL coverage</li>
+        </ul>
+        <div class="tags"><span>React</span><span>Node</span><span>Prisma</span><span>AWS Lambda</span><span>GitHub Actions</span><span>Jest / RTL</span></div>
+      </article>
+
+      <article class="past-card reveal" data-hover>
+        <div class="work-card__top">
+          <span class="work-card__index mono">13</span>
+          <span class="work-card__role">Lead Frontend Developer · Architect</span>
+        </div>
+        <h3>BioMark: AI-Assisted Patient &amp; Doctor Portal</h3>
+        <p class="work-card__org">Healthcare · web + mobile care coordination</p>
+        <p class="work-card__desc">Patient and doctor portals across web and mobile for managing disease-wise medical data and coordinating care.</p>
+        <ul class="work-card__points">
+          <li>Disease-wise data management with role-based permissions across both portals</li>
+          <li>AI-assisted patient triage that prioritizes and escalates cases by urgency, plus real-time chat and appointment scheduling</li>
+          <li>Data model and access controls designed for sensitive medical records, with privacy and role separation</li>
+        </ul>
+        <div class="tags"><span>React</span><span>Redux</span><span>TypeScript</span><span>Node</span><span>Socket.IO</span><span>Azure</span></div>
+      </article>
     </div>
   </div>
 </section>
@@ -365,6 +445,42 @@
   </div>
 </section>
 
+<!-- ============ WRITING ============ -->
+<section class="section" id="writing">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <p class="kicker reveal">Writing</p>
+        <h2 class="h2 reveal">Notes from the <em>build</em>.</h2>
+      </div>
+      <a class="btn btn--ghost btn--sm reveal" href="https://www.linkedin.com/in/abhijeet-tiwari-ai-engineer/recent-activity/articles/" target="_blank" rel="noopener" data-hover>All articles on LinkedIn ↗</a>
+    </div>
+
+    <div class="writing-grid">
+      <a class="article article--feat reveal" href="https://www.linkedin.com/pulse/code-never-bottleneck-abhijeet-tiwari-j71af/" target="_blank" rel="noopener" data-hover>
+        <span class="article__meta mono">LinkedIn article · Agentic SDLC</span>
+        <h3>Code Is Never the Bottleneck</h3>
+        <p>What actually limits delivery once agents can write the code: context, review, validation and the harness around them — the lesson behind the ~707K-LOC Simplifi modernization.</p>
+        <span class="article__cta">Read the article ↗</span>
+      </a>
+
+      <a class="article article--feat reveal" href="https://www.linkedin.com/pulse/we-built-ai-system-doesnt-just-generate-documents-validates-tiwari-9ulxf/" target="_blank" rel="noopener" data-hover>
+        <span class="article__meta mono">LinkedIn article · Document intelligence</span>
+        <h3>We Built an AI System That Doesn’t Just Generate Documents — It Validates Them</h3>
+        <p>Generation is the easy half. This is the grounding, citation-or-UNVERIFIED discipline and traceability layer that makes generated specifications trustworthy enough to sign off.</p>
+        <span class="article__cta">Read the article ↗</span>
+      </a>
+
+      <div class="article article--muted reveal" data-hover>
+        <span class="article__meta mono">LinkedIn article · MCP</span>
+        <h3>How I Built My Own Custom MCP Suite to Give AI Agents Memory</h3>
+        <p>The self-initiated R&amp;D that became the “hivemind” memory layer shared across Claude Code, Codex and OpenCode.</p>
+        <span class="article__cta">See project 07 above</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CREDENTIALS ============ -->
 <section class="section" id="credentials">
   <div class="wrap">
@@ -380,10 +496,57 @@
       <div class="cred reveal" data-hover><span class="cred__org mono">AWS</span><h4>Developing Machine Learning Applications</h4><p class="mono">2020</p></div>
       <div class="cred reveal" data-hover><span class="cred__org mono">IBM · ISRO / IIRS</span><h4>Python for Data Science · Geoprocessing using Python</h4><p class="mono">2021</p></div>
     </div>
-    <div class="awards reveal">
-      <span data-hover>Spot Award Winner <em>2025</em></span>
-      <span data-hover>Solution Enabler <em>2025</em></span>
-      <span data-hover>Innovation Award, Individual Excellence <em>2025</em></span>
+    <p class="cred-note reveal">Awards and recognition are collected in the <a href="#recognition" data-hover>Recognition</a> section below.</p>
+  </div>
+</section>
+
+<!-- ============ RECOGNITION / AWARDS ============ -->
+<section class="section section--recog" id="recognition">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <p class="kicker reveal">Recognition</p>
+        <h2 class="h2 reveal">Awarded for the <em>work</em>, and for the team.</h2>
+      </div>
+    </div>
+
+    <div class="award-grid">
+      <div class="award award--feat reveal" data-hover>
+        <span class="award__badge" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5.2"/><path d="M8.4 13.6L7 22l5-2.6L17 22l-1.4-8.4"/></svg>
+        </span>
+        <span class="award__org mono">R SYSTEMS · 2025</span>
+        <h3>Innovation Award — Individual Excellence</h3>
+        <p>For agentic AI work taken from prototype to production delivery: the AI-native SDLC harness, the custom MCP + memory layer, and the multi-agent architectures behind client engagements.</p>
+      </div>
+
+      <div class="award award--feat reveal" data-hover>
+        <span class="award__badge" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 19v-1.6a3.4 3.4 0 0 0-3.4-3.4H6.4A3.4 3.4 0 0 0 3 17.4V19"/><circle cx="9.5" cy="7.4" r="3.4"/><path d="M21 19v-1.6a3.4 3.4 0 0 0-2.6-3.3M15.6 4.2a3.4 3.4 0 0 1 0 6.5"/></svg>
+        </span>
+        <span class="award__org mono">R SYSTEMS · 2025</span>
+        <h3>Innovation Award — Team</h3>
+        <p>Won alongside the delivery team for shipping an agent-amplified modernization program end to end — architecture, harness, evals and adoption, not just a demo.</p>
+      </div>
+
+      <div class="award reveal" data-hover>
+        <span class="award__org mono">R SYSTEMS · 2025</span>
+        <h3>Spot Award</h3>
+        <p>Recognition for impact delivered inside a live engagement.</p>
+      </div>
+
+      <div class="award reveal" data-hover>
+        <span class="award__org mono">R SYSTEMS · 2025</span>
+        <h3>Solution Enabler</h3>
+        <p>For turning client problems into architected, buildable AI solutions.</p>
+      </div>
+
+      <a class="award award--link reveal" href="https://www.linkedin.com/posts/activity-7487880799418081280-n0Sq" target="_blank" rel="noopener" data-hover>
+        <span class="award__org mono">ANNOUNCEMENT</span>
+        <h3>Both awards, announced on LinkedIn</h3>
+        <p>The post marking the Innovation Award and the team win.</p>
+        <span class="award__cta">Read the post ↗</span>
+      </a>
     </div>
   </div>
 </section>

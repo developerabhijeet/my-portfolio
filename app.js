@@ -183,7 +183,9 @@
     { label: 'View selected work', tag: 'section', action: () => go('#work') },
     { label: 'Stack & tools', tag: 'section', action: () => go('#stack') },
     { label: 'Experience timeline', tag: 'section', action: () => go('#experience') },
+    { label: 'Writing & articles', tag: 'section', action: () => go('#writing') },
     { label: 'Credentials', tag: 'section', action: () => go('#credentials') },
+    { label: 'Awards & recognition', tag: 'section', action: () => go('#recognition') },
     { label: 'Contact', tag: 'section', action: () => go('#contact') },
     { label: 'Simplifi — AI-Native Legacy Modernization', tag: 'project', action: () => go('#work') },
     { label: 'Waymo — SAP Supply Chain Multi-Agent POC', tag: 'project', action: () => go('#work') },
@@ -194,6 +196,8 @@
     { label: 'Download résumé (PDF)', tag: 'action', action: () => window.open('Abhijeet_Tiwari_Senior_Agentic_AI_FDE.pdf', '_blank') },
     { label: 'Copy email address', tag: 'action', action: () => { navigator.clipboard?.writeText('hello@example.com'); } },
     { label: 'Toggle theme', tag: 'action', action: () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark') },
+    { label: 'Article — Code Is Never the Bottleneck', tag: 'article', action: () => window.open('https://www.linkedin.com/pulse/code-never-bottleneck-abhijeet-tiwari-j71af/', '_blank') },
+    { label: 'Article — AI That Validates Documents, Not Just Generates Them', tag: 'article', action: () => window.open('https://www.linkedin.com/pulse/we-built-ai-system-doesnt-just-generate-documents-validates-tiwari-9ulxf/', '_blank') },
     { label: 'Open LinkedIn', tag: 'link', action: () => window.open('https://www.linkedin.com/in/abhijeet-tiwari-ai-engineer/', '_blank') },
     { label: 'Open GitHub', tag: 'link', action: () => window.open('https://www.github.com/developerabhijeet', '_blank') },
   ];
