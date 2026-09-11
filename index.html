@@ -7,7 +7,7 @@
 <meta name="description" content="Abhijeet Tiwari, Senior Agentic AI Forward Deployed Engineer and GenAI Solutions Architect. Multi-agent systems, RAG, MCP, evals, forward deployed engineering.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -50,21 +50,38 @@
     <div class="hero__grid"></div>
   </div>
   <div class="wrap hero__wrap">
-    <p class="eyebrow reveal">Abhijeet Tiwari · Pune, India · UTC+5:30</p>
-    <h1 class="hero__title reveal">
-      Senior Agentic AI<br>
-      Forward Deployed <span class="accent">Engineer.</span>
-    </h1>
-    <p class="hero__lede reveal">I embed with enterprise teams and take agentic AI from whiteboard to production: multi-agent systems, RAG, MCP, evals, and the guardrails that make autonomy safe. 10+ years shipping software; the last stretch spent building agents that ship software.</p>
-    <div class="hero__actions reveal">
-      <a href="#work" class="btn btn--primary btn--lg" data-hover><span>View selected work</span></a>
-      <a href="#contact" class="btn btn--ghost btn--lg" data-hover><span>Get in touch</span></a>
+    <div class="hero__cols">
+      <div class="hero__col">
+        <p class="eyebrow reveal">Abhijeet Tiwari · Pune, India · UTC+5:30</p>
+        <h1 class="hero__title reveal">
+          Senior Agentic AI<br>
+          Forward Deployed <span class="accent">Engineer.</span>
+        </h1>
+        <p class="hero__lede reveal">I embed with enterprise teams and take agentic AI from whiteboard to production: multi-agent systems, RAG, MCP, evals, and the guardrails that make autonomy safe. 10+ years shipping software; the last stretch spent building agents that ship software.</p>
+        <div class="hero__actions reveal">
+          <a href="#work" class="btn btn--primary btn--lg" data-hover><span>View selected work</span></a>
+          <a href="#contact" class="btn btn--ghost btn--lg" data-hover><span>Get in touch</span></a>
+        </div>
+        <ul class="hero__facts reveal mono">
+          <li>Anthropic Claude Certified Architect</li>
+          <li>Google ADK · Vertex AI Agent Engine</li>
+          <li>MCP author</li>
+        </ul>
+      </div>
+      <div class="hero__col hero__col--trace reveal" aria-hidden="true">
+        <div class="trace">
+          <div class="trace__head">
+            <span class="trace__dots"><i></i><i></i><i></i></span>
+            <span class="mono trace__title">agent_graph.run()</span>
+            <span class="trace__live mono"><i></i>live</span>
+          </div>
+          <div class="trace__body mono" id="traceBody"></div>
+          <div class="trace__foot mono">
+            <span>18 nodes</span><span>5 loops</span><span id="traceStage">intent</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <ul class="hero__facts reveal mono">
-      <li>Anthropic Claude Certified Architect</li>
-      <li>Google ADK · Vertex AI Agent Engine</li>
-      <li>MCP author</li>
-    </ul>
   </div>
   <a href="#work" class="hero__down" data-hover aria-label="Scroll to work">
     <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><rect x="1" y="1" width="12" height="18" rx="6" stroke="currentColor" stroke-width="1.4"/><circle class="hero__down-dot" cx="7" cy="6" r="1.6" fill="currentColor"/></svg>

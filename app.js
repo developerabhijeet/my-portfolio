@@ -14,6 +14,57 @@
 
   $('#year').textContent = new Date().getFullYear();
 
+  /* ---------- subtle custom cursor ---------- */
+  const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if (fine && !reduce) {
+    const dot = document.createElement('div');
+    dot.className = 'cursor-dot';
+    document.body.appendChild(dot);
+    addEventListener('mousemove', e => {
+      dot.classList.add('is-on');
+      dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%,-50%)`;
+    });
+    document.addEventListener('mouseover', e => { if (e.target.closest('[data-hover],a,button')) dot.classList.add('is-hover'); });
+    document.addEventListener('mouseout', e => { if (e.target.closest('[data-hover],a,button')) dot.classList.remove('is-hover'); });
+  }
+
+
+
+  /* ---------- agent trace panel (hero) ---------- */
+  const traceBody = $('#traceBody'), traceStage = $('#traceStage');
+  if (traceBody) {
+    const STEPS = [
+      { k: 'intent', t: 'reading intent.md' },
+      { k: 'discovery', t: 'scanning legacy module (4 agents, parallel)' },
+      { k: 'contract', t: 'writing design-spec.json' },
+      { k: 'plan', t: 'ordering file-level work' },
+      { k: 'codegen', t: 'backend + frontend agents, isolated worktrees' },
+      { k: 'parity', t: 'diffing UI vs. contract (ΔE / px)' },
+      { k: 'self-review', t: 'cheap-tier pass: guardrails, dead code' },
+      { k: 'review', t: 'adversarial review, critic ≥ producer tier' },
+      { k: 'qa', t: 'running scenario suite against live app' },
+      { k: 'draft-pr', t: 'opening draft PR, degradations logged' },
+    ];
+    let i = 0;
+    const MAXLN = 6;
+    function pushLine(html) {
+      const div = document.createElement('div');
+      div.className = 'ln'; div.innerHTML = html;
+      traceBody.appendChild(div);
+      while (traceBody.children.length > MAXLN) traceBody.removeChild(traceBody.firstChild);
+    }
+    function tick() {
+      const step = STEPS[i % STEPS.length];
+      if (traceStage) traceStage.textContent = step.k;
+      pushLine(`<span class="k">→ ${step.k}</span> ${step.t}`);
+      i++;
+      if (i % STEPS.length === 0) setTimeout(() => { pushLine('<span class="ok">✓ draft PR opened</span><span class="caret"></span>'); setTimeout(() => { traceBody.innerHTML = ''; }, 1400); }, 500);
+      const nextDelay = reduce ? 1200 : (700 + Math.random() * 600);
+      setTimeout(tick, nextDelay);
+    }
+    setTimeout(tick, 900);
+  }
+
   /* ---------- nav scrolled state + scroll progress ---------- */
   const nav = $('#nav'), prog = $('#progress');
   const onScroll = () => {
@@ -63,6 +114,7 @@
     const ctx = auroraCanvas.getContext('2d');
     let w, h, blobs, raf;
     const css = v => getComputedStyle(root).getPropertyValue(v).trim();
+    let nodes = [];
     const resize = () => {
       w = auroraCanvas.width = auroraCanvas.parentElement.clientWidth * Math.min(devicePixelRatio, 2);
       h = auroraCanvas.height = auroraCanvas.parentElement.clientHeight * Math.min(devicePixelRatio, 2);
@@ -72,6 +124,11 @@
         { x: cx + w * .2, y: cy * .7, r: Math.max(w, h) * .26, c: css('--accent-2'), a: .4, sx: 0.00014, sy: 0.0002, p: 2 },
         { x: cx, y: cy * 1.3, r: Math.max(w, h) * .22, c: css('--accent'), a: .3, sx: 0.0002, sy: 0.00016, p: 4 },
       ];
+      const n = Math.min(34, Math.floor((w * h) / 90000));
+      nodes = Array.from({ length: n }, () => ({
+        x: Math.random() * w, y: Math.random() * h * .85,
+        vx: (Math.random() - .5) * .12, vy: (Math.random() - .5) * .12,
+      }));
     };
     const draw = t => {
       ctx.clearRect(0, 0, w, h);
@@ -84,6 +141,28 @@
         ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, b.r, 0, Math.PI * 2); ctx.fill();
       }
       ctx.globalCompositeOperation = 'source-over';
+
+      const link = 150 * Math.min(devicePixelRatio, 2), nodeCol = css('--fg-2');
+      for (const nd of nodes) {
+        nd.x += nd.vx; nd.y += nd.vy;
+        if (nd.x < 0 || nd.x > w) nd.vx *= -1;
+        if (nd.y < 0 || nd.y > h * .85) nd.vy *= -1;
+      }
+      for (let a = 0; a < nodes.length; a++) {
+        for (let b = a + 1; b < nodes.length; b++) {
+          const dx = nodes[a].x - nodes[b].x, dy = nodes[a].y - nodes[b].y, d = Math.hypot(dx, dy);
+          if (d < link) {
+            ctx.strokeStyle = hexA(css('--accent'), (1 - d / link) * .16);
+            ctx.lineWidth = devicePixelRatio * .6;
+            ctx.beginPath(); ctx.moveTo(nodes[a].x, nodes[a].y); ctx.lineTo(nodes[b].x, nodes[b].y); ctx.stroke();
+          }
+        }
+      }
+      for (const nd of nodes) {
+        ctx.beginPath(); ctx.arc(nd.x, nd.y, 1.5 * devicePixelRatio, 0, Math.PI * 2);
+        ctx.fillStyle = hexA(css('--accent'), .5); ctx.fill();
+      }
+
       raf = requestAnimationFrame(draw);
     };
     function hexA(hex, a) {
