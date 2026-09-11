@@ -194,8 +194,8 @@
     { label: 'Download résumé (PDF)', tag: 'action', action: () => window.open('Abhijeet_Tiwari_Senior_Agentic_AI_FDE.pdf', '_blank') },
     { label: 'Copy email address', tag: 'action', action: () => { navigator.clipboard?.writeText('hello@example.com'); } },
     { label: 'Toggle theme', tag: 'action', action: () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark') },
-    { label: 'Open LinkedIn', tag: 'link', action: () => window.open('https://www.linkedin.com/', '_blank') },
-    { label: 'Open GitHub', tag: 'link', action: () => window.open('https://github.com/', '_blank') },
+    { label: 'Open LinkedIn', tag: 'link', action: () => window.open('https://www.linkedin.com/in/abhijeet-tiwari-ai-engineer/', '_blank') },
+    { label: 'Open GitHub', tag: 'link', action: () => window.open('https://www.github.com/developerabhijeet', '_blank') },
   ];
   function go(hash) { $(hash)?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); }
   let activeIdx = 0, filtered = commands;
